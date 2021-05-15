@@ -25,7 +25,7 @@ function App() {
     setTheme(!baseTheme)
   }
   return (
-    <ThemeProvider theme={baseTheme === true ? BaseTheme : DarkTheme}>
+    <ThemeProvider theme={baseTheme ? BaseTheme : DarkTheme}>
       <GlobalStyles />
       <Container>
         <h1>hello world</h1>
