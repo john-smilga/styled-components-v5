@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+
 const Card = () => {
   return (
     <StyledCard>
       <img
-        src='https://dl.airtable.com/.attachments/97a67b32630a587e482863a61861607b/547d4b22/product-6.jpg'
+        src='https://dl.airtable.com/.attachmentThumbnails/0be1af59cf889899b5c9abb1e4db38a4/d631ac52'
         alt='product'
       />
       <footer>
@@ -32,24 +33,24 @@ const StyledCard = styled.article`
     padding: 0 2rem;
     h4 {
       text-transform: capitalize;
-      /* ::before {
-        content: 'name : ';
+      &::before {
+        content: 'Name : ';
         color: red;
-      } */
+      }
     }
-
     p {
       color: var(--primary);
       font-weight: 700;
     }
   }
+
   transition: all 0.5s ease-in-out;
-  :hover {
+  &:hover {
     box-shadow: 0 3px 3px #222;
     cursor: pointer;
   }
   @media (min-width: 768px) {
-    min-width: 600px;
+    max-width: 600px;
   }
 `
 

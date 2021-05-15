@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 const fruits = ['orange', 'apple', 'banana', 'peach']
+
 const Item = styled.li`
   list-style-type: none;
   ${({ odd }) => {
@@ -17,6 +18,7 @@ const Item = styled.li`
         `
   }}
 `
+
 const List = () => {
   return (
     <ul>

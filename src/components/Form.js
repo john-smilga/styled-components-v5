@@ -9,14 +9,17 @@ const Button = styled.button.attrs((props) => {
   color: white;
   padding: 0.25rem;
   cursor: pointer;
-  ${({ type }) =>
-    type === 'submit' &&
-    css`
-      display: block;
-      width: 100%;
-      margin: 1rem auto;
-      border-radius: 0.25rem;
-    `}
+  ${({ type }) => {
+    return (
+      type === 'submit' &&
+      css`
+        display: block;
+        width: 100%;
+        margin-top: 1rem;
+        border-radius: 0.25rem;
+      `
+    )
+  }}
 `
 
 const BasicInput = styled.input.attrs((props) => {
@@ -49,8 +52,8 @@ const Form = () => {
         <h2>Form</h2>
         <BasicInput />
         <BasicInput />
+        <BasicInput />
         <BasicInput type='email' placeholder='enter email' />
-
         <Button type='submit'>submit here</Button>
       </form>
     </div>

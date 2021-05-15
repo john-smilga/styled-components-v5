@@ -1,6 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-
+import styled, { css } from 'styled-components'
 const Product = ({ name, price }) => {
   return (
     <Wrapper price={price}>
@@ -26,7 +25,7 @@ const Wrapper = styled.article`
     color: ${({ price }) => {
       if (price < 100) return 'green'
       if (price > 500) return 'red'
-      return `#222`
+      return '#222'
     }};
   }
 `
