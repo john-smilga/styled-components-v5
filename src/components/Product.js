@@ -1,47 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
-const Product = ({ image, name, price }) => {
+
+const Product = ({ name, price }) => {
   return (
-    <Wrapper>
-      <img src={image} alt={name} />
-      <footer>
-        <h4>{name}</h4>
-        <p>${price}</p>
-      </footer>
+    <Wrapper price={price}>
+      <h4>{name}</h4>
+      <p>${price}</p>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.article`
-  background: var(--white);
+  width: 300px;
+  background: #fff;
+  padding: 1rem;
   border-radius: 0.25rem;
-  transition: all 0.5s ease-in-out;
-  :hover {
-    box-shadow: 0 3px 5px #000;
-    img {
-      opacity: 0.8;
-    }
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h4 {
+    text-transform: capitalize;
   }
-  img {
-    height: 225px;
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
-    transition: all 0.5s ease-in-out;
-  }
-  footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-    h4 {
-      text-transform: capitalize;
-    }
-    p {
-      color: var(--primary);
-    }
+  p {
+    color: ${({ price }) => {
+      if (price < 100) return 'green'
+      if (price > 500) return 'red'
+      return `#222`
+    }};
   }
 `
 
